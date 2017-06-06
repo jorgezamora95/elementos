@@ -10,6 +10,6 @@ public class BimestralApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BimestralApplication.class, args);
                 
-            repo.save(new Direccion(22, "asasa", 23232L, "DDDD"));
+//            repo.save(new Direccion(22, "asasa", 23232L, "DDDD"));
 	}
 }
