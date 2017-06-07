@@ -8,7 +8,9 @@ package org.campitos.bimestral;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -18,11 +20,14 @@ import javax.persistence.Table;
 
 @Entity
 //@Table(name="direccion")
+@SequenceGenerator(name="sec_direccion", initialValue=1, allocationSize=100)
 public class Direccion {
  
- @Id
+@Id 
  //@Column(name="id")
- @GeneratedValue
+// @GeneratedValue
+@GeneratedValue(generator="secdir") 
+@SequenceGenerator(name="secdir",sequenceName="sec_direccion", allocationSize=1) 
  private Long id;
  
   private Integer numero;
