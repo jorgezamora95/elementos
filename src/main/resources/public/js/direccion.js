@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 
+//Vamos  hacer el request a nuestro servicio usando ajax con jquery
 
 $("#guardarDireccion").click(function(){
-
- $.post('direccion/12/12/12/12', function(datos){
-     console.log(datos.id)
- });
-});
+            //Aplicamos el metodo post usando la uri del servicio
+          $.post("direccion/12/calle 13/55130/Ecatepunk",function(json){
+              console.log(json.id);
+               })  ;
+            
+           }
+        );

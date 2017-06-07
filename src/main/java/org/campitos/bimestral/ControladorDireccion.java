@@ -17,15 +17,26 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ControladorDireccion {
-    @Autowired RepositorioDireccion repo;
     
-    @RequestMapping(value="/direccion/{numero}/{calle}/{cp}/{municipio}", method=RequestMethod.POST, headers={"Accept=application/json"})
-    public Direccion guardar(@PathVariable Integer numero, @PathVariable String calle, @PathVariable Long cp, @PathVariable String municipio)throws Exception{
-        System.out.println("Activado el request");
-        Direccion dir=  repo.save(new Direccion(numero, calle, cp, municipio));
+@Autowired RepositorioDireccion repo;
+    
+
+/**
+ * 
+ * @param numero ESte parametro es el numero de calle y es de Integer
+ * @param calle  El nombre de la calle es de tipo String
+ * @param cp  El codigpo postal es de tipo Long
+ * @param municipio  El municipio es de tipo STring
+ * @return  El tipo de retorno es el objeto Direccion que se guardo e incluye el id generado
+ */
+    @RequestMapping(value="/direccion/{numero}/{calle}/{cp}/{municipio}",
+            method=RequestMethod.POST, headers ={"Accept=application/json"})
+    public Direccion guardar(@PathVariable Integer numero,@PathVariable String 
+            calle, @PathVariable Long cp, @PathVariable String municipio){
         
-      return dir;
+         return repo.save(new Direccion(numero, calle, cp, municipio));
+         
     }
-    
+            
     
 }
