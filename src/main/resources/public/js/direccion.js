@@ -8,7 +8,12 @@
 
 $("#guardarDireccion").click(function(){
             //Aplicamos el metodo post usando la uri del servicio
-          $.post("direccion/12/calle 13/55130/Ecatepunk",function(json){
+            var numero=$("#numero").val();
+            var calle=$("#calle").val();
+            var cp=$("#cp").val();
+            var municipio=$("#municipio").val();
+            
+          $.post("direccion/"+numero+'/'+calle+'/'+cp+'/'+municipio,function(json){
               console.log(json.id);
                })  ;
             
