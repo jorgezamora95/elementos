@@ -20,14 +20,14 @@ import javax.persistence.Table;
 
 @Entity
 //@Table(name="direccion")
-@SequenceGenerator(name="sec_direccion", initialValue=1, allocationSize=100)
+
 public class Direccion {
  
 @Id 
  //@Column(name="id")
- @GeneratedValue
-//@GeneratedValue(generator="secdir") 
-//@SequenceGenerator(name="secdir",sequenceName="sec_direccion", allocationSize=1) 
+// @GeneratedValue
+@GeneratedValue(generator="secdir") 
+@SequenceGenerator(name="secdir",sequenceName="sec_direccion", allocationSize=1) 
  private Long id;
  
   private Integer numero;
